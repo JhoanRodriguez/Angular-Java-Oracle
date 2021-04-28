@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 img-home">
+        <img src="https://d9b6rardqz97a.cloudfront.net/wp-content/uploads/2019/10/17190522/Seguro-de-proteccion-de-Credito_personas-1-1-560x280.jpg"
+        alt="Working man" width="560" height="280">
+      </div>
+      <div class="col-md-6">
+          <div class="row btn-home">
+            <button type="button" class="btn btn-primary" [routerLink]="['/empresas']">Empresas de cobranza </button>
+          </div>
+          <div class="row btn-home">
+            <button type="button" class="btn btn-primary" [routerLink]="['/agenda']">Agenda del día por gestor</button>
+        </div>
+          <div class="row btn-home">
+            <button type="button" class="btn btn-primary" (click)='generarAgenda()'>Generar agenda</button>
+          </div>
+      </div>
+    </div>
+  </div>

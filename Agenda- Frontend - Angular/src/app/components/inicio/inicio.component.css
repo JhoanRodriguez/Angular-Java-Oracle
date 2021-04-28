@@ -1,0 +1,16 @@
+.img-home{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.btn{
+    background-color: #016d38;
+    margin-top: 5%;
+}
+.btn:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+.btn-home{
+    margin-top: 5%;
+    justify-content: center;
+}

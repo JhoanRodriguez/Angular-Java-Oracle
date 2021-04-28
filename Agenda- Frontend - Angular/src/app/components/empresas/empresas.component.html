@@ -1,0 +1,208 @@
+<div class="row">
+    <div class="col-sm-6">
+        <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{empresa1.nombre}}</h5>
+          <ul class="list-group">
+            <li class="list-group-item">ID empresa: {{empresa1.id_Empresa}}</li>
+            <li class="list-group-item">Tiempo Desplazamiento: {{empresa1.tiempo_Desplazamiento}} min</li>
+            <li class="list-group-item">Tiempo de Visita: {{empresa1.tiempo_Visita}} min</li>
+            <li class="list-group-item">Sede principal ubicada en {{empresa1.ciudad}}</li>
+          </ul>
+          <br>
+          <div class="btn-div">
+            <button  class="btn btn-custom" data-toggle="modal" data-target="#verAgentes1" (click)="getAgentes(1)">Ver Agentes</button >
+              <!-- Modal -->
+              <div class="modal fade" id="verAgentes1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="verAgentes1">Lista Agentes</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Id Agente</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ciudad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let agente of agentes ;let i = index;" [attr.data-automation-id]='i'>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{agente.id_AGENTE}}</td>
+                            <td>{{agente.nombre}}</td>
+                            <td>{{agente.ciudad}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- close Modal -->
+            <button  class="btn btn-custom" data-toggle="modal" data-target="#verParametros1" (click)="getDataPramEmpresa(1)">Ver parámetros</button >
+               <!-- Modal -->
+               <div class="modal fade" id="verParametros1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="verParametros1">Lista Parámetros</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo Cliente</th>
+                            <th scope="col">Deuda Min</th>
+                            <th scope="col">Deuda Max</th>
+                            <th scope="col">Antigüedad Min</th>
+                            <th scope="col">Antigüedad Max</th>
+                            <th scope="col"># Productos Min</th>
+                            <th scope="col"># Productos Max</th>
+                            <th scope="col">Ciudad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of paramEmpresa ;let i = index;" [attr.data-automation-id]='i'>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.tipo_Cliente}}</td>
+                            <td>{{data.deuda_Min | currency:'$'}}</td>
+                            <td>{{data.deuda_Max | currency:'$'}}</td>
+                            <td>{{data.antiguedad_Min}} meses</td>
+                            <td>{{data.antiguedad_Max}} meses</td>
+                            <td>{{data.productos_Min}}</td>
+                            <td>{{data.productos_Max}}</td>
+                            <td>{{data.ciudad}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- close Modal -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{empresa2.nombre}}</h5>
+          <ul class="list-group">
+            <li class="list-group-item">ID empresa: {{empresa2.id_Empresa}}</li>
+            <li class="list-group-item">Tiempo Desplazamiento: {{empresa2.tiempo_Desplazamiento}} min</li>
+            <li class="list-group-item">Tiempo de Visita: {{empresa2.tiempo_Visita}} min</li>
+            <li class="list-group-item">Sede principal ubicada en {{empresa2.ciudad}}</li>
+          </ul>
+          <br>
+          <div class="btn-div">
+            <button  class="btn btn-custom" data-toggle="modal" data-target="#verAgentes2" (click)="getAgentes(2)">Ver Agentes</button >
+               <!-- Modal -->
+               <div class="modal fade" id="verAgentes2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="verAgentes2">Lista Agentes</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Id Agente</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ciudad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let agente of agentes ;let i = index;" [attr.data-automation-id]='i'>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{agente.id_AGENTE}}</td>
+                            <td>{{agente.nombre}}</td>
+                            <td>{{agente.ciudad}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- close Modal -->
+            <button  class="btn btn-custom" data-toggle="modal" data-target="#verParametros2" (click)="getDataPramEmpresa(2)">Ver parámetros</button >
+              <!-- Modal -->
+              <div class="modal fade" id="verParametros2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="verParametros2">Lista Parámetros</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo Cliente</th>
+                            <th scope="col">Deuda Min</th>
+                            <th scope="col">Deuda Max</th>
+                            <th scope="col">Antigüedad Min</th>
+                            <th scope="col">Antigüedad Max</th>
+                            <th scope="col"># Productos Min</th>
+                            <th scope="col"># Productos Max</th>
+                            <th scope="col">Ciudad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of paramEmpresa ;let i = index;" [attr.data-automation-id]='i'>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.tipo_Cliente}}</td>
+                            <td>{{data.deuda_Min | currency:'$'}}</td>
+                            <td>{{data.deuda_Max | currency:'$'}}</td>
+                            <td>{{data.antiguedad_Min}} meses</td>
+                            <td>{{data.antiguedad_Max}} meses</td>
+                            <td>{{data.productos_Min}}</td>
+                            <td>{{data.productos_Max}}</td>
+                            <td>{{data.ciudad}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- close Modal -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

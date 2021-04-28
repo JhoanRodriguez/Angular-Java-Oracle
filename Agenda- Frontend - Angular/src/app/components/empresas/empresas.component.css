@@ -1,0 +1,20 @@
+.card{
+    margin: 10%;
+    max-width: 80%;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: space-around;
+}
+.btn-custom{
+    background-color:#016d38;
+    color:white;
+}
+.btn-custom:hover{
+    color:yellow;
+    text-decoration: underline;
+}
+.modal-content{
+    width: fit-content;
+}

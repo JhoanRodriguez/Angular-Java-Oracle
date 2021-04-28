@@ -1,0 +1,38 @@
+<div class="agenda">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1" ></label>
+        <select [(ngModel)]="optionselected" (change)="getEvent()" class="form-control" id="exampleFormControlSelect1" >
+            <option>Seleccione un agente</option>
+        <option *ngFor="let agente of idAgentes">{{agente.nombre}}</option>
+        </select>
+    </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Hora</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo cliente</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Monto deuda</th>
+            <th scope="col">En mora desde</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Barrio</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let usuario of usuarios ;let i = index; " [attr.data-automation-id]='i'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.tipo_CLIENTE}}</td>
+            <td>{{usuario.direccion}}</td>
+            <td>{{usuario.celular}} </td>
+            <td>{{usuario.monto_DEUDA | currency:'$'}} </td>
+            <td>{{usuario.tiempo}}</td>
+            <td>{{usuario.ciudad}}</td>
+            <td>{{usuario.barrio}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
